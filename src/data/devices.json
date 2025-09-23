@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nome": "Dispositivo 1",
+    "ip": "192.168.0.10",
+    "mac": "ab:cd:ef:gh:ij:kl",
+    "so": "Xubuntu 24",
+    "status": "online",
+    "posicao": { "x": 800, "y": 300 }
+  },
+  {
+    "id": 2,
+    "nome": "Dispositivo 2",
+    "ip": "192.168.0.2",
+    "mac": "00:11:22:33:44:55",
+    "so": "Ubuntu Server 22.04",
+    "status": "offline",
+    "posicao": { "x": 600, "y": 450 }
+  }
+]
