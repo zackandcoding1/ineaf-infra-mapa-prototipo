@@ -1,49 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { FaRegBuilding, FaBars } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import { MdOutlineInfo } from "react-icons/md";
+import devicesData from "../data/devices.json";
 
 
 const Sidebar = () => {
-  return (
-    <div className='flex'>
-        <div className='w-20 md:w-64 bg-gray-500 transition-width duration-300'>
-            <div className='flex justify-between items-center'>
-                <h2 className='text-xl font-bold'>InfraMapa</h2>
-                <button>
-                    <FaBars size={24}/>
-                </button>
-            </div>
+    const [selectedDevice, setSelectedDevice] = useState(null);
 
-            <nav className='mt-4'>
-                <ul>
-                    <li className='flex items-center p-4 hover:bg-gray-700 cursor-pointer'>
-                        <FaRegBuilding  size={24} />
+    const showDeviceDetails = (device) => {
+        setSelectedDevice(device);
+    };
+
+    return (
+        <div className='flex'>
+            <div className='w-20 md:w-80 bg-gray-500 transition-width duration-300'>
+                <div className='flex justify-between items-center'>
+                    <h2 className='text-xl font-bold'>InfraMapa</h2>
+                </div>
+
+                <nav className='mt-4'>
+                    <div className='flex items-center p-4 hover:bg-gray-700 cursor-pointer'>
+                        <FaRegBuilding size={24} />
                         <span className="ml-4 md:block">
                             Andar
                         </span>
-                    </li>
-                </ul>
-                <ul>
-                    <li className='flex items-center p-4 hover:bg-gray-700 cursor-pointer'>
-                        <FaComputer  size={24} />
+                    </div>
+                    <div className='flex items-center p-4 hover:bg-gray-700 cursor-pointer'>
+                        <FaComputer size={24} />
                         <span className="ml-4 md:block">
                             Dispositivos
                         </span>
-                    </li>
-                </ul>
-                <ul>
-                    <li className='flex items-center p-4 hover:bg-gray-700 cursor-pointer'>
-                        <MdOutlineInfo  size={24} />
+                    </div>
+                    <div className="overflow-y-auto max-h-92
+                        [&::-webkit-scrollbar]:w-3
+                        [&::-webkit-scrollbar-thumb]:rounded-full
+                        [&::-webkit-scrollbar-thumb]:border-white
+                        [&::-webkit-scrollbar-track]:bg-gray-100 
+                        [&::-webkit-scrollbar-thumb]:bg-gray-300 
+                        dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
+                        {devicesData.map((device) =>
+                            <div key={device.id} className="p-4 m-2 text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 cursor-pointer">
+                                <h3 className="font-semibold mb-1">{device.name}</h3>
+                                <p className="text-sm mb-1">IP: {device.ip}</p>
+                                <p className="text-sm">MAC: {device.mac}</p>
+                                <p>SO: {device.os}</p>
+                                <p>Status: {device.status}</p>
+                            </div>
+                        )}
+                    </div>
+                    <div className='flex items-center p-4 hover:bg-gray-700 cursor-pointer'>
+                        <MdOutlineInfo size={24} />
                         <span className="ml-4 md:block">
                             Detalhes
                         </span>
-                    </li>
-                </ul>
-            </nav>
+                    </div>
+                </nav>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Sidebar;

@@ -1,20 +1,110 @@
 [
   {
     "id": 1,
-    "nome": "Dispositivo 1",
+    "name": "Dispositivo 1",
     "ip": "192.168.0.10",
     "mac": "ab:cd:ef:gh:ij:kl",
-    "so": "Xubuntu 24",
+    "os": "Xubuntu 24",
     "status": "online",
-    "posicao": { "x": 800, "y": 300 }
+    "position": { "x": 800, "y": 300 }
   },
   {
     "id": 2,
-    "nome": "Dispositivo 2",
+    "name": "Dispositivo 2",
     "ip": "192.168.0.2",
     "mac": "00:11:22:33:44:55",
-    "so": "Ubuntu Server 22.04",
+    "os": "Ubuntu Server 22.04",
     "status": "offline",
-    "posicao": { "x": 600, "y": 450 }
+    "position": { "x": 600, "y": 450 }
+  },
+  {
+    "id": 3,
+    "name": "Dispositivo 3",
+    "ip": "192.168.0.15",
+    "mac": "aa:bb:cc:dd:ee:03",
+    "os": "Windows 10",
+    "status": "online",
+    "position": { "x": 300, "y": 200 }
+  },
+  {
+    "id": 4,
+    "name": "Dispositivo 4",
+    "ip": "192.168.0.22",
+    "mac": "aa:bb:cc:dd:ee:04",
+    "os": "macOS Ventura",
+    "status": "offline",
+    "position": { "x": 100, "y": 400 }
+  },
+  {
+    "id": 5,
+    "name": "Dispositivo 5",
+    "ip": "192.168.0.35",
+    "mac": "aa:bb:cc:dd:ee:05",
+    "os": "Debian 12",
+    "status": "online",
+    "position": { "x": 500, "y": 500 }
+  },
+  {
+    "id": 6,
+    "name": "Dispositivo 6",
+    "ip": "192.168.0.50",
+    "mac": "aa:bb:cc:dd:ee:06",
+    "os": "Fedora 38",
+    "status": "online",
+    "position": { "x": 700, "y": 600 }
+  },
+  {
+    "id": 7,
+    "name": "Dispositivo 7",
+    "ip": "192.168.0.60",
+    "mac": "aa:bb:cc:dd:ee:07",
+    "os": "Windows Server 2019",
+    "status": "offline",
+    "position": { "x": 200, "y": 100 }
+  },
+  {
+    "id": 8,
+    "name": "Dispositivo 8",
+    "ip": "192.168.0.70",
+    "mac": "aa:bb:cc:dd:ee:08",
+    "os": "Pop!_OS 22.04",
+    "status": "online",
+    "position": { "x": 900, "y": 350 }
+  },
+  {
+    "id": 9,
+    "name": "Dispositivo 9",
+    "ip": "192.168.0.80",
+    "mac": "aa:bb:cc:dd:ee:09",
+    "os": "Arch Linux",
+    "status": "offline",
+    "position": { "x": 400, "y": 250 }
+  },
+  {
+    "id": 10,
+    "name": "Dispositivo 10",
+    "ip": "192.168.0.90",
+    "mac": "aa:bb:cc:dd:ee:0a",
+    "os": "Kali Linux",
+    "status": "online",
+    "position": { "x": 550, "y": 350 }
+  },
+  {
+    "id": 11,
+    "name": "Dispositivo 11",
+    "ip": "192.168.0.100",
+    "mac": "aa:bb:cc:dd:ee:0b",
+    "os": "Windows 11",
+    "status": "offline",
+    "position": { "x": 250, "y": 600 }
+  },
+  {
+    "id": 12,
+    "name": "Dispositivo 12",
+    "ip": "192.168.0.110",
+    "mac": "aa:bb:cc:dd:ee:0c",
+    "os": "Elementary OS 7",
+    "status": "online",
+    "position": { "x": 750, "y": 150 }
   }
 ]
