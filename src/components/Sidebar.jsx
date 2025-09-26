@@ -9,6 +9,7 @@ const Sidebar = () => {
     const [selectedDevice, setSelectedDevice] = useState(null);
 
     const showDeviceDetails = (device) => {
+        console.log(`Clicou no dispositivo ${device.id}`);
         setSelectedDevice(device);
     };
 
@@ -40,12 +41,8 @@ const Sidebar = () => {
                         [&::-webkit-scrollbar-thumb]:bg-gray-300 
                         dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
                         {devicesData.map((device) =>
-                            <div key={device.id} className="p-4 m-2 text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 cursor-pointer">
+                            <div onClick={() => showDeviceDetails(device)} key={device.id} className="p-4 m-2 text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 cursor-pointer">
                                 <h3 className="font-semibold mb-1">{device.name}</h3>
-                                <p className="text-sm mb-1">IP: {device.ip}</p>
-                                <p className="text-sm">MAC: {device.mac}</p>
-                                <p>SO: {device.os}</p>
-                                <p>Status: {device.status}</p>
                             </div>
                         )}
                     </div>
@@ -54,6 +51,20 @@ const Sidebar = () => {
                         <span className="ml-4 md:block">
                             Detalhes
                         </span>
+                    </div>
+
+                    <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg mt-2">
+                        {selectedDevice ? (
+                            <div className="text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                <h3 className="font-semibold mb-2">{selectedDevice.name}</h3>
+                                <p>IP: {selectedDevice.ip}</p>
+                                <p>MAC: {selectedDevice.mac}</p>
+                                <p>SO: {selectedDevice.os}</p>
+                                <p>Status: {selectedDevice.status}</p>
+                            </div>
+                        ) : (
+                            <p className="text-sm text-gray-500">Selecione um dispositivo para ver os detalhes</p>
+                        )}
                     </div>
                 </nav>
             </div>
