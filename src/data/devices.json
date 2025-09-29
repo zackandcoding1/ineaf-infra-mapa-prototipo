@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "floor": 0,
     "name": "Dispositivo 1",
     "ip": "192.168.0.10",
     "mac": "ab:cd:ef:gh:ij:kl",
@@ -10,6 +11,7 @@
   },
   {
     "id": 2,
+    "floor": 0,
     "name": "Dispositivo 2",
     "ip": "192.168.0.2",
     "mac": "00:11:22:33:44:55",
@@ -19,6 +21,7 @@
   },
   {
     "id": 3,
+    "floor": 0,
     "name": "Dispositivo 3",
     "ip": "192.168.0.15",
     "mac": "aa:bb:cc:dd:ee:03",
@@ -28,6 +31,7 @@
   },
   {
     "id": 4,
+    "floor": 0,
     "name": "Dispositivo 4",
     "ip": "192.168.0.22",
     "mac": "aa:bb:cc:dd:ee:04",
@@ -37,6 +41,7 @@
   },
   {
     "id": 5,
+    "floor": 0,
     "name": "Dispositivo 5",
     "ip": "192.168.0.35",
     "mac": "aa:bb:cc:dd:ee:05",
@@ -46,6 +51,7 @@
   },
   {
     "id": 6,
+    "floor": 0,
     "name": "Dispositivo 6",
     "ip": "192.168.0.50",
     "mac": "aa:bb:cc:dd:ee:06",
@@ -55,6 +61,7 @@
   },
   {
     "id": 7,
+    "floor": 1,
     "name": "Dispositivo 7",
     "ip": "192.168.0.60",
     "mac": "aa:bb:cc:dd:ee:07",
@@ -64,6 +71,7 @@
   },
   {
     "id": 8,
+    "floor": 1,
     "name": "Dispositivo 8",
     "ip": "192.168.0.70",
     "mac": "aa:bb:cc:dd:ee:08",
@@ -73,6 +81,7 @@
   },
   {
     "id": 9,
+    "floor": 1,
     "name": "Dispositivo 9",
     "ip": "192.168.0.80",
     "mac": "aa:bb:cc:dd:ee:09",
@@ -82,6 +91,7 @@
   },
   {
     "id": 10,
+    "floor": 1,
     "name": "Dispositivo 10",
     "ip": "192.168.0.90",
     "mac": "aa:bb:cc:dd:ee:0a",
@@ -91,6 +101,7 @@
   },
   {
     "id": 11,
+    "floor": 1,
     "name": "Dispositivo 11",
     "ip": "192.168.0.100",
     "mac": "aa:bb:cc:dd:ee:0b",
@@ -100,6 +111,7 @@
   },
   {
     "id": 12,
+    "floor": 1,
     "name": "Dispositivo 12",
     "ip": "192.168.0.110",
     "mac": "aa:bb:cc:dd:ee:0c",
