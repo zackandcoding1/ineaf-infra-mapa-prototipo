@@ -4,9 +4,7 @@ import { FaComputer } from "react-icons/fa6";
 import { MdOutlineInfo } from "react-icons/md";
 import devicesData from "../data/devices.json";
 
-const Sidebar = () => {
-    const [selectedDevice, setSelectedDevice] = useState(null);
-    const [selectedFloor, setSelectedFloor] = useState(null);
+const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedDevice }) => {
 
     // Extrai andares únicos e ordena
     const floors = [...new Set(devicesData.map(device => device.floor))].sort();
@@ -14,7 +12,7 @@ const Sidebar = () => {
     const selectFloor = (floor) => {
         console.log(`Andar ${floor} selecionado`);
         setSelectedFloor(floor);
-        setSelectedDevice(null); // Limpa o dispositivo selecionado ao mudar de andar
+        setSelectedDevice(null);
     }
 
     const showDeviceDetails = (device) => {
