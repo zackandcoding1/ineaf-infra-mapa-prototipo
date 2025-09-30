@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaRegBuilding } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import { MdOutlineInfo } from "react-icons/md";
 import devicesData from "../data/devices.json";
-
 
 const Sidebar = () => {
     const [selectedDevice, setSelectedDevice] = useState(null);
@@ -144,7 +143,7 @@ const Sidebar = () => {
                                     </div>
                                     <div className='flex justify-between'>
                                         <span className='font-medium text-gray-600'>Status:</span>
-                                        <span className={`font-semibold ${selectedDevice.status === 'online' || selectedDevice.status === 'ativo'
+                                        <span className={`font-semibold ${selectedDevice.status === 'online'
                                             ? 'text-green-600'
                                             : 'text-red-600'
                                             }`}>
