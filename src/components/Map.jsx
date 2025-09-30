@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import InferiorMap from "../assets/inferior-map.svg?react";
 import devicesData from "../data/devices.json";
 
@@ -24,27 +24,28 @@ function Map({ selectedFloor, selectedDevice, onDeviceClick }) {
             <div className="relative inline-block">
                 <InferiorMap
                     ref={svgRef}
-                    className="w-full h-auto max-w-4xl" />
-            </div>
-
-            {/* Marcadores dos Dispositivos */}
-            {selectedDevice && (
-                <div
-                    className={`absolute w-4 h-4 rounded-full cursor-pointer transition-all duration-300 flex items-center justify-center
+                    className="w-full h-150 max-w-4xl" />
+                    
+                {/* Marcadores dos Dispositivos */}
+                {selectedDevice && (
+                    <div
+                        className={`absolute w-4 h-4 rounded-full cursor-pointer transition-all duration-300 flex items-center justify-center
                             ${selectedDevice.status === 'online' ? 'bg-green-500' : 'bg-red-500'}
                             ring-4 ring-blue-400 shadow-lg z-10
                         `}
-                    style={{
-                        left: `${selectedDevice.x}px`,
-                        top: `${selectedDevice.y}px`,
-                        transform: 'translate(-50%, -50%)'
-                    }}
-                    title={selectedDevice.name}
-                >
-                    {/* Animação do marcador */}
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                </div>
-            )}
+                        style={{
+                            left: `${selectedDevice.x}px`,
+                            top: `${selectedDevice.y}px`,
+                            transform: 'translate(-50%, -50%)'
+                        }}
+                        title={selectedDevice.name}
+                    >
+                        {/* Animação do marcador */}
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    </div>
+                )}
+            </div>
+
         </div>
     );
 }

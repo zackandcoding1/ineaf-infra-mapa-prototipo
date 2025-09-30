@@ -1,4 +1,3 @@
-import React, { useState, useRef } from 'react';
 import { FaRegBuilding } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import { MdOutlineInfo } from "react-icons/md";
@@ -113,7 +112,7 @@ const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                     <div className='p-4 bg-gray-600 rounded-lg m-2'>
                         {selectedDevice ? (
                             <div className='bg-white rounded-lg p-4 shadow-md'>
-                                <h3 className='font-bold text-lg mb-3 text-gray-800 border-b pb-2'>
+                                <h3 className='font-bold text-lg mb-3 bg-gray-200 pb-2'>
                                     {selectedDevice.name}
                                 </h3>
                                 <div className='space-y-2'>
