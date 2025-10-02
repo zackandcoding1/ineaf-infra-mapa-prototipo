@@ -31,7 +31,7 @@ function Map({ selectedFloor, selectedDevice, onDeviceClick }) {
                     <div
                         className={`absolute w-4 h-4 rounded-full cursor-pointer transition-all duration-300 flex items-center justify-center
                             ${selectedDevice.status === 'online' ? 'bg-green-500' : 'bg-red-500'}
-                            ring-4 ring-blue-400 shadow-lg z-10
+                            ring-3 ring-blue-400 shadow-lg z-10
                         `}
                         style={{
                             left: `${selectedDevice.x}px`,

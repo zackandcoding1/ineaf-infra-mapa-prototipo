@@ -41,3 +41,7 @@ img {
 table {
   border-collapse: collapse;
 }
+
+svg, .svg-container {
+    color-scheme: light !important;
+}

@@ -62,11 +62,11 @@ const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                             <FaComputer size={24} />
                             <span className="ml-4 md:block">
                                 Dispositivos
-                                {/* {selectedFloor !== null && (
+                                {selectedFloor !== null && (
                                     <span className="ml-2 px-2 py-1 rounded-full">
                                         {` (${filteredDevices.length})`}
                                     </span>
-                                )} */}
+                                )}
                             </span>
                         </div>
 
