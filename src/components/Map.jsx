@@ -25,25 +25,31 @@ function Map({ selectedFloor, selectedDevice, onDeviceClick }) {
                 <InferiorMap
                     ref={svgRef}
                     className="w-full h-150 max-w-4xl" />
-                    
+
                 {/* Marcadores dos Dispositivos */}
-                {selectedDevice && (
+                {filteredDevices.map(device => (
                     <div
-                        className={`absolute w-4 h-4 rounded-full cursor-pointer transition-all duration-300 flex items-center justify-center
-                            ${selectedDevice.status === 'online' ? 'bg-green-500' : 'bg-red-500'}
-                            ring-3 ring-blue-400 shadow-lg z-10
-                        `}
+                        key={device.id}
+                        onClick={() => onDeviceClick(device)}
+                        className={`absolute w-5 h-5 rounded-full cursor-pointer transition-all duration-300 flex items-center justify-center
+                    ${device.status === 'online' ? 'bg-green-500' : 'bg-red-500'}
+                    ${selectedDevice?.id === device.id
+                                ? 'ring-4 ring-blue-400 scale-100 z-10'
+                                : 'hover:scale-100 hover:ring-2 hover:ring-white'}
+                    `}
                         style={{
-                            left: `${selectedDevice.x}px`,
-                            top: `${selectedDevice.y}px`,
+                            left: `${device.x}px`,
+                            top: `${device.y}px`,
                             transform: 'translate(-50%, -50%)'
                         }}
-                        title={selectedDevice.name}
+                        title={device.name}
                     >
                         {/* Animação do marcador */}
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        {selectedDevice?.id === device.id &&
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        }
                     </div>
-                )}
+                ))}
             </div>
 
         </div>
