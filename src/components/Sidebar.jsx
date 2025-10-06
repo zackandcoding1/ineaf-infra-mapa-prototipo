@@ -1,6 +1,7 @@
 import { FaRegBuilding } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import { MdOutlineInfo } from "react-icons/md";
+import { IoHomeOutline } from "react-icons/io5";
 import devicesData from "../data/devices.json";
 
 const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedDevice }) => {
@@ -26,7 +27,7 @@ const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
 
     return (
         <div className='flex'>
-            <div className='w-20 md:w-80 bg-gray-500 transition-width duration-300 h-screen overflow-y-auto'>
+            <div className='w-30 md:w-64 bg-gray-500 transition-width duration-300 h-screen overflow-y-auto'>
                 <div className='flex justify-between items-center p-4 border-b border-gray-600'>
                     <h2 className='text-xl font-bold text-white'>InfraMapa</h2>
                 </div>
@@ -40,17 +41,23 @@ const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                         </div>
 
                         {/* Lista de Andares */}
-                        <div className='ml-4 mb-2'>
+                        <div className='space-y-2 px-4 mb-4'>
                             {floors.map((floor) => (
                                 <div
                                     key={floor}
                                     onClick={() => selectFloor(floor)}
-                                    className={`p-3 mx-2 rounded-md cursor-pointer transition-colors ${selectedFloor === floor
-                                        ? 'bg-blue-600 text-white'
-                                        : 'bg-gray-600 text-gray-200 hover:bg-gray-700'}`}>
-                                    <span className='ml-4 md:block'>
-                                        {floor === 0 ? 'Térreo' : `${floor}º Andar`}
-                                    </span>
+                                    className={`p-3 rounded-md cursor-pointer transition-colors w-full ${selectedFloor === floor
+                                        ? 'bg-zinc-600 text-white'
+                                        : 'bg-gray-600 text-gray-200 hover:bg-gray-700'
+                                        }`}>
+                                    <div className="flex items-center justify-between">
+                                        <span className='md:block'>
+                                            {floor === 0 ? 'Térreo' : `${floor}º Andar`}
+                                        </span>
+                                        <span className="">
+                                            {floor === 0 ? <IoHomeOutline size={18} /> : <FaRegBuilding size={18} />}
+                                        </span>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -91,8 +98,8 @@ const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                                         onClick={() => showDeviceDetails(device)}
                                         key={device.id}
                                         className={`p-4 m-2 rounded-lg border cursor-pointer transition-all ${selectedDevice?.id === device.id
-                                            ? 'bg-blue-600 border-blue-400 text-white'
-                                            : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-100 hover:text-blue-700'
+                                            ? 'bg-sky-600 border-sky-400 text-white'
+                                            : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-100 hover:text-sky-700'
                                             }`}>
                                         <h3 className='font-semibold mb-1'>{device.name}</h3>
                                         <p className='text-xs opacity-75'>IP: {device.ip}</p>
@@ -101,14 +108,15 @@ const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                             )}
                         </div>
                     </div>
-
-                    {/* Seção de Detalhes */}
+                    
+                    {/*
+                    // Seção de Detalhes
                     <div className='flex items-center p-4 text-white font-semibold border-t border-gray-600'>
                         <MdOutlineInfo size={24} />
                         <span className="ml-4 md:block">Detalhes</span>
                     </div>
 
-                    {/* Painel de Detalhes */}
+                    // Painel de Detalhes
                     <div className='p-4 bg-gray-600 rounded-lg m-2'>
                         {selectedDevice ? (
                             <div className='bg-white rounded-lg p-4 shadow-md'>
@@ -149,21 +157,23 @@ const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                                     </div>
                                 </div>
 
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setSelectedDevice(null);
-                                    }}
-                                    className='mt-4 w-full px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-md transition-colors cursor-pointer'>
-                                    Fechar
-                                </button>
+                                <div className="hover:bg-red-700 px-3 py-2 text-sm rounded-md transition-colors">
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setSelectedDevice(null);
+                                        }}
+                                        className='mt-4 w-full cursor-pointer'>
+                                        Fechar
+                                    </button>
+                                </div>
                             </div>
                         ) : (
                             <p className='text-sm text-gray-300 text-center py-4'>
                                 Selecione um dispositivo para ver os detalhes.
                             </p>
                         )}
-                    </div>
+                    </div> */}
                 </nav>
             </div>
         </div>

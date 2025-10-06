@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Map from "./components/Map";
+import Details from "./components/Details";
 
 function App() {
   const [selectedFloor, setSelectedFloor] = useState(null);
@@ -19,6 +20,10 @@ function App() {
         selectedDevice={selectedDevice}
         onDeviceClick={setSelectedDevice}
       />
+      <Details
+        selectedFloor={selectedFloor}
+        selectedDevice={selectedDevice}
+        onDeviceClick={setSelectedDevice}/>
     </div>
   );
 }
