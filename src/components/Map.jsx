@@ -35,7 +35,7 @@ function Map({ selectedFloor, selectedDevice, onDeviceClick }) {
                     ${device.status === 'online' ? 'bg-green-500' : 'bg-red-500'}
                     ${selectedDevice?.id === device.id
                                 ? 'ring-4 ring-blue-400 scale-100 z-10'
-                                : 'hover:scale-100 hover:ring-2 hover:ring-white'}
+                                : 'hover:scale-100 hover:ring-2 hover:ring-sky-300'}
                     `}
                         style={{
                             left: `${device.x}px`,

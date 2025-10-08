@@ -24,15 +24,17 @@ const Details = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                                     <IoLocationOutline />
                                     <span className="font-semibold text-lg">Localização</span>
                                 </div>
-                                <div className='flex justify-between'>
-                                    <span className='font-medium text-gray-600'>Andar:</span>
-                                    <span className='text-gray-900'>
-                                        {selectedDevice.floor === 0 ? 'Térreo' : `${selectedDevice.floor}º Andar`}
-                                    </span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">Sala:</span>
-                                    <span className="text-gray-900 font-mono text-xs">{selectedDevice.room}</span>
+                                <div className="bg-gray-300 rounded-xl h-16 mb-2 flex flex-col justify-center">
+                                    <div className='flex justify-between'>
+                                        <span className='font-medium text-gray-600'>Andar:</span>
+                                        <span className='text-gray-900 font-mono text-xs'>
+                                            {selectedDevice.floor === 0 ? 'Térreo' : `${selectedDevice.floor}º Andar`}
+                                        </span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">Sala:</span>
+                                        <span className="text-gray-900 font-mono text-xs">{selectedDevice.room}</span>
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -40,17 +42,19 @@ const Details = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                                     <FaWifi />
                                     <span className="font-semibold text-lg">Rede</span>
                                 </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">Endereço IP:</span>
-                                    <span className="text-gray-900 font-mono text-xs">
-                                        {selectedDevice.ip}
-                                    </span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">Endereço MAC:</span>
-                                    <span className="text-gray-900 font-mono text-xs">
-                                        {selectedDevice.mac}
-                                    </span>
+                                <div className="bg-gray-300 rounded-xl h-16 mb-2 flex flex-col justify-center">
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">Endereço IP:</span>
+                                        <span className="text-gray-900 font-mono text-xs">
+                                            {selectedDevice.ip}
+                                        </span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">Endereço MAC:</span>
+                                        <span className="text-gray-900 font-mono text-xs">
+                                            {selectedDevice.mac}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -58,21 +62,23 @@ const Details = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                                     <FaRegHdd />
                                     <span className="font-semibold text-lg">Especificações</span>
                                 </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">SO:</span>
-                                    <span className="text-gray-900 font-mono text-xs">{selectedDevice.os}</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">Processador:</span>
-                                    <span className="text-gray-900 font-mono text-xs">{selectedDevice.cpu}</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">Memória RAM:</span>
-                                    <span className="text-gray-900 font-mono text-xs">{selectedDevice.ram}</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">Armazenamento:</span>
-                                    <span className="text-gray-900 font-mono text-xs">{selectedDevice.storage}</span>
+                                <div className="bg-gray-300 rounded-xl h-30 mb-2 flex flex-col justify-center">
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">SO:</span>
+                                        <span className="text-gray-900 font-mono text-xs">{selectedDevice.os}</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">Processador:</span>
+                                        <span className="text-gray-900 font-mono text-xs">{selectedDevice.cpu}</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">Memória RAM:</span>
+                                        <span className="text-gray-900 font-mono text-xs">{selectedDevice.ram}</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">Armazenamento:</span>
+                                        <span className="text-gray-900 font-mono text-xs">{selectedDevice.storage}</span>
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -80,22 +86,24 @@ const Details = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
                                     <MdOutlineMonitorHeart />
                                     <span className="font-semibold text-lg">Monitoramento</span>
                                 </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">Última conexão:</span>
-                                    <span className="text-gray-900 font-mono text-xs">{selectedDevice.lastConnection}</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="font-medium text-gray-600">Tempo ativo:</span>
-                                    <span className="text-gray-900 font-mono text-xs">{selectedDevice.uptime}</span>
-                                </div>
-                                <div className='flex justify-between'>
-                                    <span className='font-medium text-gray-600'>Status:</span>
-                                    <span className={`font-semibold ${selectedDevice.status === 'online'
-                                        ? 'text-green-600'
-                                        : 'text-red-600'
-                                        }`}>
-                                        {selectedDevice.status}
-                                    </span>
+                                <div className="bg-gray-300 rounded-xl h-22 mb-2 flex flex-col justify-center">
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">Última conexão:</span>
+                                        <span className="text-gray-900 font-mono text-xs">{selectedDevice.lastConnection}</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="font-medium text-gray-600">Tempo ativo:</span>
+                                        <span className="text-gray-900 font-mono text-xs">{selectedDevice.uptime}</span>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <span className='font-medium text-gray-600'>Status:</span>
+                                        <span className={`font-semibold ${selectedDevice.status === 'online'
+                                            ? 'text-green-600'
+                                            : 'text-red-600'
+                                            }`}>
+                                            {selectedDevice.status}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
