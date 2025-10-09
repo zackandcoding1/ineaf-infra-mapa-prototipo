@@ -1,13 +1,12 @@
 import { useRef } from "react";
 import InferiorMap from "../assets/inferior-map.svg?react";
-import devicesData from "../data/devices.json";
 
-function Map({ selectedFloor, selectedDevice, onDeviceClick }) {
+function Map({ devices, selectedFloor, selectedDevice, onDeviceClick }) {
     const svgRef = useRef(null);
 
     // Filtra os dispositivos para o andar selecionado
     const filteredDevices = selectedFloor !== null
-        ? devicesData.filter(device => device.floor === selectedFloor)
+        ? devices.filter(device => device.floor === selectedFloor)
         : [];
 
     return (
@@ -24,7 +23,8 @@ function Map({ selectedFloor, selectedDevice, onDeviceClick }) {
             <div className="relative inline-block">
                 <InferiorMap
                     ref={svgRef}
-                    className="w-full h-150 max-w-4xl" />
+                    className="w-full h-150 max-w-4xl"
+                    />
 
                 {/* Marcadores dos Dispositivos */}
                 {filteredDevices.map(device => (

@@ -7,6 +7,7 @@ const EditDeviceInfo = ({ device, isOpen, onClose, onSave }) => {
         floor: "",
         room: "",
         name: "",
+        type: "",
         ip: "",
         mac: "",
         os: "",
@@ -48,11 +49,11 @@ const EditDeviceInfo = ({ device, isOpen, onClose, onSave }) => {
             <div className="bg-gray-800 rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto text-white">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-700">
+                    <p className="text-xl font-bold">Editar Dispositivo</p>
                     <button
                         onClick={onClose}
-                        className="hover:bg-gray-700 p-2 rounded-full transition-colors">
-                        {/* <IoClose size={24} /> */}
-                        <p className="text-xl font-bold">Editar Dispositivo</p>
+                        className="hover:bg-gray-700 p-2 rounded-full transition-colors cursor-pointer">
+                        <IoClose size={24} />
                     </button>
                 </div>
 
@@ -74,22 +75,6 @@ const EditDeviceInfo = ({ device, isOpen, onClose, onSave }) => {
                                     className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     required
                                 />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium mb-2">
-                                    Tipo
-                                </label>
-                                <select
-                                    name="type"
-                                    value={formData.type || 'Desktop'}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                >
-                                    <option value="Desktop">Desktop</option>
-                                    <option value="Notebook">Notebook</option>
-                                    <option value="Server">Server</option>
-                                </select>
                             </div>
 
                             <div>
@@ -176,6 +161,22 @@ const EditDeviceInfo = ({ device, isOpen, onClose, onSave }) => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Especificações do Sistema</h3>
                         <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium mb-2">
+                                    Tipo
+                                </label>
+                                <select
+                                    name="type"
+                                    value={formData.type || 'Desktop'}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                >
+                                    <option value="Desktop">Desktop</option>
+                                    <option value="Notebook">Notebook</option>
+                                    <option value="Server">Server</option>
+                                </select>
+                            </div>
+
                             <div className="col-span-2">
                                 <label className="block text-sm font-medium mb-2">
                                     Sistema Operacional
@@ -269,13 +270,13 @@ const EditDeviceInfo = ({ device, isOpen, onClose, onSave }) => {
                         <button
                             type="button"
                             onClick={onClose}
-                            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors"
+                            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors cursor-pointer"
                         >
                             Cancelar
                         </button>
                         <button
                             type="submit"
-                            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+                            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md transition-colors cursor-pointer"
                         >
                             Salvar Alterações
                         </button>

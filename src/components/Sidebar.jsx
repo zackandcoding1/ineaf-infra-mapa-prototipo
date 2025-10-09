@@ -1,12 +1,11 @@
 import { FaRegBuilding } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import { IoHomeOutline } from "react-icons/io5";
-import devicesData from "../data/devices.json";
 
-const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedDevice }) => {
+const Sidebar = ({ devices, selectedFloor, setSelectedFloor, selectedDevice, setSelectedDevice }) => {
 
     // Extrai andares únicos e ordena
-    const floors = [...new Set(devicesData.map(device => device.floor))].sort();
+    const floors = [...new Set(devices.map(device => device.floor))].sort();
 
     const selectFloor = (floor) => {
         console.log(`Andar ${floor} selecionado`);
@@ -22,7 +21,7 @@ const Sidebar = ({ selectedFloor, setSelectedFloor, selectedDevice, setSelectedD
     // Filtra dispositivos com base no andar selecionado
     const filteredDevices = (selectedFloor === null || selectedFloor === undefined)
         ? []
-        : devicesData.filter(device => device.floor === selectedFloor);
+        : devices.filter(device => device.floor === selectedFloor);
 
     return (
         <div className='flex'>
