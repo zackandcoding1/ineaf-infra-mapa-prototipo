@@ -19,17 +19,17 @@ const Details = ({ selectedDevice, setSelectedDevice, onUpdateDevice, onDeleteDe
                     {/* Esquerda: ícone + texto */}
                     <div className="flex items-center space-x-2">
                         <MdOutlineInfo size={24} />
-                        <span>Detalhes</span>
+                        <span className="font-semibold">Detalhes</span>
                     </div>
 
                     {/* Direita: botão Editar */}
                     {selectedDevice && (
                         <button
                             onClick={() => setIsModalOpen(true)}
-                            className="p-2 hover:bg-gray-600 rounded-md transition-colors cursor-pointer"
+                            className="p-2 cursor-pointer"
                             title="Editar Dispositivo"
                         >
-                            Editar
+                            <span className="rounded-md hover:bg-gray-600 transition-colors">Editar</span>
                         </button>
                     )}
                 </div>
