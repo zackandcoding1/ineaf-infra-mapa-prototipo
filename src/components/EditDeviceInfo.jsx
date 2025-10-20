@@ -30,9 +30,13 @@ const EditDeviceInfo = ({ device, isOpen, onClose, onSave }) => {
 
     const handleChange = (e) => {
         const { name, value, type } = e.target;
+
+        // Definine quais campos são numéricos
+        const numericFields = ['floor', 'x', 'y', 'id'];
+
         setFormData(prev => ({
             ...prev,
-            [name]: type === 'number' ? Number(value) : value
+            [name]: numericFields.includes(name) ? Number(value) : value
         }));
     }
 
