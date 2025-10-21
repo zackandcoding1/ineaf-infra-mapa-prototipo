@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import InferiorMap from "../assets/inferior-map.svg?react";
+import SuperiorMap from "../assets/superior-map.svg?react";
 
 function Map({ devices, selectedFloor, selectedDevice, onDeviceClick }) {
     const svgRef = useRef(null);
@@ -21,10 +22,18 @@ function Map({ devices, selectedFloor, selectedDevice, onDeviceClick }) {
             </h2>
 
             <div className="relative inline-block">
-                <InferiorMap
-                    ref={svgRef}
-                    className="w-full h-150 max-w-4xl"
-                    />
+                {selectedFloor == null
+                    ? <p className="text-gray-500">Nenhum andar selecionado.</p>
+                    : selectedFloor === 0
+                        ? <InferiorMap
+                            ref={svgRef}
+                            className="w-full h-130 max-w-4xl"
+                        />
+                        : <SuperiorMap
+                            ref={svgRef}
+                            className="w-full h-100 max-w-6xl"
+                        />}
+
 
                 {/* Marcadores dos Dispositivos */}
                 {filteredDevices.map(device => (
