@@ -197,7 +197,7 @@ const EditDeviceInfo = ({ device, isOpen, onClose, onSave }) => {
                                 >
                                     <option value="Desktop">Desktop</option>
                                     <option value="Notebook">Notebook</option>
-                                    <option value="Server">Server</option>
+                                    <option value="Servidor">Servidor</option>
                                 </select>
                             </div>
 

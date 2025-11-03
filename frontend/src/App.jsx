@@ -8,7 +8,6 @@ function App() {
     const [devices, setDevices] = useState([]);
     const [selectedFloor, setSelectedFloor] = useState(null);
     const [selectedDevice, setSelectedDevice] = useState(null);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     // Carregando os dispositivos do backend
@@ -18,15 +17,12 @@ function App() {
 
     const fetchDevices = async () => {
         try {
-            setLoading(true);
             setError(null);
             const data = await devicesAPI.getAll();
             setDevices(data);
         } catch (err) {
             console.error('Erro ao buscar dispositivos:', err);
             setError('Erro ao conectar ao servidor.');
-        } finally {
-            setLoading(false);
         }
     };
 
@@ -73,34 +69,23 @@ function App() {
         }
     };
 
-    if (loading) {
+    if (error) {
         return (
             <div className="flex items-center justify-center h-screen bg-gray-100">
-                <div className="text-center">
-                    <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                    <p className="text-xl font-semibold text-gray-700">Carregando dispositivos...</p>
+                <div className="text-center max-w-md p-8 bg-white rounded-lg shadow-lg">
+                    <div className="text-5xl mb-4">⚠️</div>
+                    <h2 className="text-2xl font-bold text-red-600 mb-4">Erro de Conexão</h2>
+                    <p className="text-gray-700 mb-6">{error}</p>
+                    <button
+                        onClick={fetchDevices}
+                        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer"
+                    >
+                        Tentar Novamente
+                    </button>
                 </div>
             </div>
         );
     }
-
-    // if (error) {
-    //     return (
-    //         <div className="flex items-center justify-center h-screen bg-gray-100">
-    //             <div className="text-center max-w-md p-8 bg-white rounded-lg shadow-lg">
-    //                 <div className="text-5xl mb-4">⚠️</div>
-    //                 <h2 className="text-2xl font-bold text-red-600 mb-4">Erro de Conexão</h2>
-    //                 <p className="text-gray-700 mb-6">{error}</p>
-    //                 <button
-    //                     onClick={fetchDevices}
-    //                     className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer"
-    //                 >
-    //                     Tentar Novamente
-    //                 </button>
-    //             </div>
-    //         </div>
-    //     );
-    // }
 
     return (
         <div className='flex h-screen'>
