@@ -32,7 +32,7 @@ app.use((req, res) => {
 });
 
 // Iniciar servidor
-const PORT = 8800;
+const PORT = process.env.PORT || 8800;
 app.listen(PORT, () => {
     console.log("=================================");
     console.log(`🚀 Servidor rodando na porta ${PORT}`);

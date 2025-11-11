@@ -5,9 +5,13 @@ dotenv.config();
 
 export const db = mysql.createConnection({
   host: process.env.DB_HOST || "localhost",
+  port: process.env.DB_PORT || "8800",
   user: process.env.DB_USER || "root",
   password: process.env.DB_PASSWORD,
-  database: "inframapa"
+  database: process.env.DB_NAME,
+  ssl: {
+    rejectUnauthorized: true
+  }
 });
 
 db.connect((err) => {
